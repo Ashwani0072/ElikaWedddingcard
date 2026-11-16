@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elika & Shivang — Royal Wedding Invitation | January 2027</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Sacramento, Cormorant Garamond, Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for Elegant Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            royalMaroon: '#4A0404',
+            deepCrimson: '#2E0202',
+            royalEmerald: '#063729',
+            royalSapphire: '#0C1B33',
+            ivorySilk: '#FBF7F0',
+            warmParchment: '#F4ECE1',
+            antiqueGold: '#C59B27',
+            brightGold: '#E8C66B',
+            marigoldGold: '#D97706',
+          },
+          fontFamily: {
+            script: ['"Sacramento"', 'cursive'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          },
+          animation: {
+            'spin-slow': 'spin 45s linear infinite',
+            'spin-reverse-slow': 'spinReverse 60s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-gold': 'pulseGold 2.5s infinite',
+          },
+          keyframes: {
+            spinReverse: {
+              '0%': { transform: 'rotate(360deg)' },
+              '100%': { transform: 'rotate(0deg)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseGold: {
+              '0%, 100%': { boxShadow: '0 0 0 0 rgba(212, 175, 55, 0.5)' },
+              '50%': { boxShadow: '0 0 25px 6px rgba(212, 175, 55, 0.25)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom Heritage Gold Foil & Texture Styling */
+    body {
+      background-color: #FBF7F0;
+      color: #2E0202;
+      overflow-x: hidden;
+    }
+
+    .gold-foil-text {
+      background: linear-gradient(
+        135deg,
+        #9A7214 0%,
+        #E6C25A 28%,
+        #FFF3C4 50%,
+        #D4AF37 72%,
+        #8C630B 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: goldShimmer 5s linear infinite;
+    }
+
+    .gold-foil-bg {
+      background: linear-gradient(
+        135deg,
+        #A67C1E 0%,
+        #DFB94C 35%,
+        #F7E396 50%,
+        #C59B27 70%,
+        #8F6710 100%
+      );
+      background-size: 200% 200%;
+      animation: goldShimmer 6s ease infinite;
+    }
+
+    @keyframes goldShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Royal Ornate Frame */
+    .royal-card-border {
+      position: relative;
+      border: 1px solid rgba(197, 155, 39, 0.55);
+      box-shadow:
+        0 20px 50px -12px rgba(46, 2, 2, 0.14),
+        inset 0 0 0 6px #FBF7F0,
+        inset 0 0 0 7px rgba(197, 155, 39, 0.4);
+    }
+
+    .dark-royal-border {
+      border: 1px solid rgba(232, 198, 107, 0.45);
+      box-shadow:
+        0 25px 60px -15px rgba(0, 0, 0, 0.55),
+        inset 0 0 0 6px rgba(46, 2, 2, 0.6),
+        inset 0 0 0 7px rgba(232, 198, 107, 0.3);
+    }
+
+    /* Subtle Heritage Jaali Pattern Overlay */
+    .jaali-pattern {
+      background-image: radial-gradient(rgba(197, 155, 39, 0.13) 1px, transparent 1px),
+                        radial-gradient(rgba(197, 155, 39, 0.08) 1px, #FBF7F0 1px);
+      background-size: 36px 36px;
+      background-position: 0 0, 18px 18px;
+    }
+
+    /* Scroll Reveal Utility */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Equalizer Bars Animation for Floating Audio Button */
+    .eq-bar {
+      width: 3px;
+      background-color: #2E0202;
+      border-radius: 9999px;
+      transition: height 0.2s ease;
+    }
+    .playing .eq-bar-1 { animation: eqBounce 0.8s ease-in-out infinite; }
+    .playing .eq-bar-2 { animation: eqBounce 0.6s ease-in-out infinite 0.15s; }
+    .playing .eq-bar-3 { animation: eqBounce 0.9s ease-in-out infinite 0.3s; }
+    .playing .eq-bar-4 { animation: eqBounce 0.7s ease-in-out infinite 0.1s; }
+
+    @keyframes eqBounce {
+      0%, 100% { height: 5px; }
+      50% { height: 18px; }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F4ECE1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C59B27;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-antiqueGold selection:text-white">
+
+  <!-- Ambient Falling Golden Petals & Sparkles Canvas -->
+  <canvas id="petalsCanvas" class="fixed inset-0 pointer-events-none z-30"></canvas>
+
+  <!-- Confetti Canvas for RSVP Celebration -->
+  <canvas id="confettiCanvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+  <!-- ===================================================================== -->
+  <!-- ENTRANCE WAX-SEAL CURTAIN OVERLAY (Unlocks Audio & Reveals Invite)    -->
+  <!-- ===================================================================== -->
+  <div id="entranceOverlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-b from-deepCrimson via-royalMaroon to-deepCrimson text-ivorySilk px-6 text-center transition-all duration-1000 ease-in-out">
+    <!-- Rotating Background Mandala SVG -->
+    <svg class="absolute w-[520px] h-[520px] md:w-[720px] md:h-[720px] opacity-10 animate-spin-slow pointer-events-none" viewBox="0 0 200 200" fill="none" stroke="#E8C66B" stroke-width="0.6">
+      <circle cx="100" cy="100" r="95" stroke-dasharray="3 3" />
+      <circle cx="100" cy="100" r="80" />
+      <circle cx="100" cy="100" r="62" stroke-dasharray="2 2" />
+      <circle cx="100" cy="100" r="42" />
+      <g stroke-width="0.5">
+        <path d="M100 5 L108 40 L100 75 L92 40 Z" />
+        <path d="M100 195 L108 160 L100 125 L92 160 Z" />
+        <path d="M5 100 L40 92 L75 100 L40 108 Z" />
+        <path d="M195 100 L160 92 L125 100 L160 108 Z" />
+        <path d="M32 32 L62 52 L82 82 L52 62 Z" />
+        <path d="M168 168 L138 148 L118 118 L148 138 Z" />
+        <path d="M168 32 L148 62 L118 82 L138 52 Z" />
+        <path d="M32 168 L52 138 L82 118 L62 148 Z" />
+      </g>
+    </svg>
+
+    <div class="relative z-10 max-w-lg mx-auto flex flex-col items-center">
+      <p class="font-serif tracking-[0.28em] uppercase text-xs md:text-sm text-brightGold/90 mb-3">
+        || ॐ श्री गणेशाय नमः ||
+      </p>
+      <p class="font-serif italic text-lg md:text-xl text-ivorySilk/85 mb-2">
+        The Verma &amp; Sharma Families Cordially Invite You
+      </p>
+
+      <h1 class="font-script text-6xl sm:text-7xl md:text-8xl gold-foil-text py-2 drop-shadow-md">
+        Elika &amp; Shivang
+      </h1>
+
+      <p class="font-serif tracking-[0.2em] uppercase text-xs sm:text-sm text-brightGold mt-2 mb-10">
+        17th – 23rd January 2027 &bull; Jammu
+      </p>
+
+      <!-- Royal Gold Wax Seal Button -->
+      <button id="openInviteBtn" type="button" class="group relative flex flex-col items-center focus:outline-none cursor-pointer">
+        <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full gold-foil-bg p-1.5 shadow-2xl animate-pulse-gold transition-transform duration-500 group-hover:scale-105">
+          <div class="w-full h-full rounded-full border-2 border-deepCrimson/70 flex flex-col items-center justify-center bg-gradient-to-br from-brightGold via-antiqueGold to-yellow-700 text-deepCrimson">
+            <span class="font-serif font-bold text-2xl sm:text-3xl tracking-widest">E &amp; S</span>
+            <span class="text-[10px] uppercase tracking-[0.22em] font-semibold mt-0.5">Open Card</span>
+          </div>
+        </div>
+        <span class="mt-5 text-xs uppercase tracking-[0.25em] text-brightGold/90 group-hover:text-white transition-colors flex items-center gap-2">
+          <i class="fa-solid fa-music text-[11px]"></i> Tap to Unveil Invitation
+        </span>
+
+      </button>
+    </div>
+  </div>
+
+  <!-- Custom Background Song (Change 'wedding-song.mp3' to your audio file name) -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="wedding-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ===================================================================== -->
+  <!-- FLOATING AUDIO CONTROLLER (Bottom Right)                              -->
+  <!-- ===================================================================== -->
+  <div class="fixed bottom-5 right-5 z-40 flex items-center gap-2.5">
+    <button
+      id="audioToggleBtn"
+      type="button"
+      aria-label="Toggle Wedding Music"
+      title="Toggle Traditional Ambient Music"
+      class="group flex items-center gap-3 px-4 py-3 rounded-full gold-foil-bg text-deepCrimson shadow-xl border border-yellow-200/70 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+    >
+      <!-- Animated Equalizer Icon -->
+      <div id="eqBars" class="flex items-end justify-center gap-[3px] h-5 w-5">
+        <span class="eq-bar eq-bar-1 h-2"></span>
+        <span class="eq-bar eq-bar-2 h-3.5"></span>
+        <span class="eq-bar eq-bar-3 h-2.5"></span>
+        <span class="eq-bar eq-bar-4 h-1.5"></span>
+      </div>
+      <div class="text-left leading-tight pr-1">
+        <span id="audioStatusLabel" class="block text-[11px] font-bold uppercase tracking-wider">Music: Off</span>
+        <span class="block text-[9px] font-medium opacity-80">Wedding Song</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- TOP NAVIGATION BAR                                                    -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-30 bg-ivorySilk/90 backdrop-blur-md border-b border-antiqueGold/30">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <a href="#hero" class="font-script text-3xl sm:text-4xl text-royalMaroon hover:text-antiqueGold transition-colors">
+        Elika &amp; Shivang
+      </a>
+      <div class="flex items-center gap-4 sm:gap-8 text-xs sm:text-sm font-serif font-semibold uppercase tracking-[0.16em] text-royalMaroon">
+        <a href="#couple" class="hover:text-antiqueGold transition-colors">The Couple</a>
+        <a href="#events" class="hover:text-antiqueGold transition-colors">Celebrations</a>
+        <a href="#rsvp" class="px-4 py-1.5 rounded-full bg-royalMaroon text-brightGold hover:bg-deepCrimson transition-colors shadow-sm">
+          RSVP
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- HERO & ROYAL INVITATION CARD                                          -->
+  <!-- ===================================================================== -->
+  <main class="jaali-pattern">
+    <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center py-14 sm:py-20 px-4 sm:px-6 overflow-hidden">
+      <!-- Decorative Corner Mandalas -->
+      <svg class="hidden md:block absolute -top-24 -left-24 w-96 h-96 text-antiqueGold/20 animate-spin-slow pointer-events-none" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8">
+        <circle cx="100" cy="100" r="90" />
+        <circle cx="100" cy="100" r="70" stroke-dasharray="4 4" />
+        <circle cx="100" cy="100" r="50" />
+        <polygon points="100,10 120,80 190,100 120,120 100,190 80,120 10,100 80,80" />
+      </svg>
+      <svg class="hidden md:block absolute -bottom-24 -right-24 w-96 h-96 text-antiqueGold/20 animate-spin-reverse-slow pointer-events-none" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8">
+        <circle cx="100" cy="100" r="90" />
+        <circle cx="100" cy="100" r="70" stroke-dasharray="4 4" />
+        <circle cx="100" cy="100" r="50" />
+        <polygon points="100,10 120,80 190,100 120,120 100,190 80,120 10,100 80,80" />
+      </svg>
+
+      <!-- Main Ornate Royal Card -->
+      <div class="relative z-10 w-full max-w-4xl bg-ivorySilk/95 royal-card-border rounded-3xl px-6 py-12 sm:px-14 sm:py-16 text-center">
+        <!-- Corner Flourish Ornaments -->
+        <div class="w-16 h-16 mx-auto mb-3 text-antiqueGold">
+          <!-- Intricate Lotus / Ganesh Crest SVG -->
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" class="w-full h-full">
+            <circle cx="50" cy="50" r="44" stroke-dasharray="2 3" />
+            <path d="M50 12 C58 28, 72 34, 50 52 C28 34, 42 28, 50 12 Z" fill="rgba(197,155,39,0.15)" />
+            <path d="M50 88 C58 72, 72 66, 50 48 C28 66, 42 72, 50 88 Z" fill="rgba(197,155,39,0.15)" />
+            <path d="M12 50 C28 42, 34 28, 52 50 C34 72, 28 58, 12 50 Z" fill="rgba(197,155,39,0.15)" />
+            <path d="M88 50 C72 42, 66 28, 48 50 C66 72, 72 58, 88 50 Z" fill="rgba(197,155,39,0.15)" />
+            <circle cx="50" cy="50" r="8" fill="#C59B27" />
+          </svg>
+        </div>
+
+        <p class="font-serif text-lg sm:text-xl font-semibold tracking-[0.22em] text-royalMaroon mb-2">
+          || ॐ श्री गणेशाय नमः ||
+        </p>
+
+        <p class="font-serif italic text-base sm:text-lg text-stone-600 max-w-xl mx-auto mb-8">
+          With the heavenly blessings of our elders and the Almighty, we joyfully request the honour of your presence at the wedding celebrations of
+        </p>
+
+        <!-- Couple & Parents Showcase -->
+        <div id="couple" class="grid grid-cols-1 md:grid-cols-11 items-center gap-6 md:gap-4 my-6">
+          <!-- Bride Details -->
+          <div class="md:col-span-5 flex flex-col items-center">
+            <span class="text-[11px] uppercase tracking-[0.25em] text-antiqueGold font-semibold mb-1">The Bride</span>
+            <h2 class="font-script text-5xl sm:text-6xl text-royalMaroon leading-tight">
+              Elika
+            </h2>
+            <div class="w-16 h-[1px] bg-antiqueGold/60 my-2.5"></div>
+            <p class="font-serif text-base sm:text-lg text-stone-700 leading-relaxed">
+              Beloved Daughter of<br />
+              <span class="font-semibold text-royalMaroon">Mrs. Rakhi Verma &amp; Mr. Naresh Verma</span>
+            </p>
+          </div>
+
+          <!-- Center Sacred Ampersand -->
+          <div class="md:col-span-1 flex flex-col items-center justify-center my-2 md:my-0">
+            <div class="w-14 h-14 rounded-full border border-antiqueGold/60 bg-warmParchment flex items-center justify-center shadow-inner">
+              <span class="font-script text-3xl gold-foil-text font-bold">&amp;</span>
+            </div>
+          </div>
+
+          <!-- Groom Details -->
+          <div class="md:col-span-5 flex flex-col items-center">
+            <span class="text-[11px] uppercase tracking-[0.25em] text-antiqueGold font-semibold mb-1">The Groom</span>
+            <h2 class="font-script text-5xl sm:text-6xl text-royalMaroon leading-tight">
+              Shivang
+            </h2>
+            <div class="w-16 h-[1px] bg-antiqueGold/60 my-2.5"></div>
+            <p class="font-serif text-base sm:text-lg text-stone-700 leading-relaxed">
+              Beloved Son of<br />
+              <span class="font-semibold text-royalMaroon">Mrs. Veena Sharma &amp; Mr. Rajinder Sharma</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="flex items-center justify-center gap-3 my-8">
+          <span class="h-[1px] w-16 sm:w-28 bg-gradient-to-r from-transparent to-antiqueGold"></span>
+          <i class="fa-solid fa-dharmachakra text-antiqueGold text-sm"></i>
+          <span class="h-[1px] w-16 sm:w-28 bg-gradient-to-l from-transparent to-antiqueGold"></span>
+        </div>
+
+        <!-- Wedding Dates Banner -->
+        <div class="inline-block px-6 sm:px-10 py-4 rounded-2xl bg-gradient-to-r from-royalMaroon via-deepCrimson to-royalMaroon text-ivorySilk border border-brightGold/50 shadow-lg">
+          <p class="text-[11px] uppercase tracking-[0.3em] text-brightGold mb-1">Save The Dates</p>
+          <p class="font-serif text-2xl sm:text-3xl font-semibold tracking-wide">
+            23rd January 2027
+          </p>
+          <p class="text-xs sm:text-sm tracking-[0.22em] uppercase text-ivorySilk/85 mt-1">
+            <i class="fa-solid fa-location-dot text-brightGold mr-1.5"></i>Jammu, J&amp;K
+          </p>
+        </div>
+
+        <!-- Live Countdown Timer to 23 January 2027 -->
+        <div class="mt-10">
+          <p class="font-serif italic text-stone-600 text-base mb-4">Counting down the moments until the Grand Reception of Barat</p>
+          <div class="grid grid-cols-4 gap-2.5 sm:gap-5 max-w-lg mx-auto">
+            <div class="bg-warmParchment border border-antiqueGold/40 rounded-2xl py-3 px-2 shadow-sm">
+              <span id="cd-days" class="block font-serif text-2xl sm:text-4xl font-bold text-royalMaroon">00</span>
+              <span class="text-[10px] sm:text-xs uppercase tracking-widest text-stone-600">Days</span>
+            </div>
+            <div class="bg-warmParchment border border-antiqueGold/40 rounded-2xl py-3 px-2 shadow-sm">
+              <span id="cd-hours" class="block font-serif text-2xl sm:text-4xl font-bold text-royalMaroon">00</span>
+              <span class="text-[10px] sm:text-xs uppercase tracking-widest text-stone-600">Hours</span>
+            </div>
+            <div class="bg-warmParchment border border-antiqueGold/40 rounded-2xl py-3 px-2 shadow-sm">
+              <span id="cd-mins" class="block font-serif text-2xl sm:text-4xl font-bold text-royalMaroon">00</span>
+              <span class="text-[10px] sm:text-xs uppercase tracking-widest text-stone-600">Minutes</span>
+            </div>
+            <div class="bg-warmParchment border border-antiqueGold/40 rounded-2xl py-3 px-2 shadow-sm">
+              <span id="cd-secs" class="block font-serif text-2xl sm:text-4xl font-bold text-antiqueGold">00</span>
+              <span class="text-[10px] sm:text-xs uppercase tracking-widest text-stone-600">Seconds</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- WEDDING CELEBRATIONS & ITINERARY TIMELINE                             -->
+    <!-- ===================================================================== -->
+    <section id="events" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+        <span class="text-xs uppercase tracking-[0.3em] text-antiqueGold font-semibold">Sacred Rituals &amp; Festivities</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-royalMaroon mt-2">
+          Wedding Itinerary
+        </h2>
+        <div class="flex items-center justify-center gap-3 my-4">
+          <span class="h-[1px] w-16 bg-antiqueGold"></span>
+          <i class="fa-solid fa-sparkles text-antiqueGold text-xs"></i>
+          <span class="h-[1px] w-16 bg-antiqueGold"></span>
+        </div>
+        <p class="font-serif italic text-lg text-stone-600">
+          Each ceremony weaves together timeless Dogra &amp; North Indian traditions, music, laughter, and heartfelt blessings.
+        </p>
+      </div>
+
+      <!-- Event Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8">
+
+        <!-- EVENT 1: Khule Shagun -->
+        <article class="reveal group bg-ivorySilk rounded-3xl p-7 sm:p-8 border border-antiqueGold/45 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-antiqueGold/10 rounded-bl-full pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-royalMaroon/10 text-royalMaroon text-xs font-semibold tracking-wider uppercase">
+                <i class="fa-regular fa-calendar"></i> 17 January 2027
+              </span>
+              <span class="text-sm font-serif font-bold text-antiqueGold">
+                <i class="fa-regular fa-clock mr-1"></i> 9:00 AM
+              </span>
+            </div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-11 h-11 rounded-2xl bg-royalMaroon text-brightGold flex items-center justify-center shrink-0 shadow">
+                <i class="fa-solid fa-hands-praying text-lg"></i>
+              </div>
+              <h3 class="font-serif text-3xl font-bold text-royalMaroon">Khule Shagun</h3>
+            </div>
+            <p class="text-sm text-stone-600 leading-relaxed mb-5">
+              An auspicious morning blessing marking the joyful commencement of our wedding festivities amidst family and sacred chants.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-antiqueGold/25 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="text-xs sm:text-sm text-stone-700">
+              <span class="font-semibold text-royalMaroon block">Venue:</span>
+              At our residence (7/A Mohinder Nagar, Canal Road, Jammu)
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=7%2FA+Mohinder+Nagar%2C+Canal+Road%2C+Jammu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-royalMaroon text-royalMaroon hover:bg-royalMaroon hover:text-brightGold text-xs font-semibold uppercase tracking-wider transition-colors shrink-0">
+              <i class="fa-solid fa-map-location-dot"></i> View on Map
+            </a>
+          </div>
+        </article>
+
+        <!-- EVENT 2: Shiv Vivah -->
+        <article class="reveal group bg-ivorySilk rounded-3xl p-7 sm:p-8 border border-antiqueGold/45 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-royalMaroon/5 rounded-bl-full pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-royalMaroon/10 text-royalMaroon text-xs font-semibold tracking-wider uppercase">
+                <i class="fa-regular fa-calendar"></i> 18 January 2027
+              </span>
+              <span class="text-sm font-serif font-bold text-antiqueGold">
+                <i class="fa-regular fa-clock mr-1"></i> 8:00 PM
+              </span>
+            </div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-11 h-11 rounded-2xl bg-royalMaroon text-brightGold flex items-center justify-center shrink-0 shadow">
+                <i class="fa-solid fa-om text-lg"></i>
+              </div>
+              <h3 class="font-serif text-3xl font-bold text-royalMaroon">Shiv Vivah</h3>
+            </div>
+            <p class="text-sm text-stone-600 leading-relaxed mb-5">
+              A devotional evening celebrating divine union with sacred hymns, traditional folk melodies, and soulful blessings.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-antiqueGold/25 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="text-xs sm:text-sm text-stone-700">
+              <span class="font-semibold text-royalMaroon block">Venue:</span>
+              At our residence (7/A Mohinder Nagar, Canal Road, Jammu)
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=7%2FA+Mohinder+Nagar%2C+Canal+Road%2C+Jammu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-royalMaroon text-royalMaroon hover:bg-royalMaroon hover:text-brightGold text-xs font-semibold uppercase tracking-wider transition-colors shrink-0">
+              <i class="fa-solid fa-map-location-dot"></i> View on Map
+            </a>
+          </div>
+        </article>
+
+        <!-- EVENT 3: Haldi (Warm Marigold & Gold Accent) -->
+        <article class="reveal group bg-gradient-to-br from-amber-50 via-yellow-50/90 to-ivorySilk rounded-3xl p-7 sm:p-8 border-2 border-amber-400/70 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-28 h-28 bg-amber-400/15 rounded-bl-full pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-900 text-xs font-semibold tracking-wider uppercase">
+                <i class="fa-regular fa-calendar"></i> 19 January 2027
+              </span>
+              <span class="text-sm font-serif font-bold text-amber-700">
+                <i class="fa-regular fa-clock mr-1"></i> 2:30 PM
+              </span>
+            </div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-11 h-11 rounded-2xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow">
+                <i class="fa-solid fa-sun text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-serif text-3xl font-bold text-amber-950">Haldi</h3>
+                <span class="text-[11px] uppercase tracking-widest text-amber-700 font-semibold">Marigold &amp; Sunshine Hues</span>
+              </div>
+            </div>
+            <p class="text-sm text-amber-950/80 leading-relaxed mb-5">
+              A radiant afternoon of sacred turmeric paste, marigold petals, playful dhol beats, and golden glow.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-amber-400/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="text-xs sm:text-sm text-amber-950">
+              <span class="font-semibold text-amber-800 block">Venue:</span>
+              Country Inn &amp; Suites by Radisson, Jammu
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Country+Inn+%26+Suites+by+Radisson%2C+Jammu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-amber-600 text-white hover:bg-amber-700 text-xs font-semibold uppercase tracking-wider transition-colors shrink-0 shadow-sm">
+              <i class="fa-solid fa-map-location-dot"></i> View on Map
+            </a>
+          </div>
+        </article>
+
+        <!-- EVENT 4: Cocktail (Starlit Sapphire & Gold Accent) -->
+        <article class="reveal group bg-gradient-to-br from-royalSapphire via-slate-900 to-royalSapphire text-ivorySilk rounded-3xl p-7 sm:p-8 border border-brightGold/55 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-28 h-28 bg-brightGold/10 rounded-bl-full pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brightGold/20 text-brightGold text-xs font-semibold tracking-wider uppercase">
+                <i class="fa-regular fa-calendar"></i> 20 January 2027
+              </span>
+              <span class="text-sm font-serif font-bold text-brightGold">
+                <i class="fa-regular fa-clock mr-1"></i> 8:00 PM
+              </span>
+            </div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-11 h-11 rounded-2xl gold-foil-bg text-royalSapphire flex items-center justify-center shrink-0 shadow">
+                <i class="fa-solid fa-champagne-glasses text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-serif text-3xl font-bold text-brightGold">Cocktail</h3>
+                <span class="text-[11px] uppercase tracking-widest text-sky-200/80 font-medium">Starlit Glamour &amp; Toasts</span>
+              </div>
+            </div>
+            <p class="text-sm text-slate-200/85 leading-relaxed mb-5">
+              An enchanting evening under the stars with signature spirits, gourmet delicacies, and celebratory dancing.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-brightGold/25 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="text-xs sm:text-sm text-slate-200">
+              <span class="font-semibold text-brightGold block">Venue:</span>
+              Four A Resort, Bari Brahmana, Jammu
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Four+A+Resort%2C+Bari+Brahmana%2C+Jammu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-brightGold text-brightGold hover:bg-brightGold hover:text-royalSapphire text-xs font-semibold uppercase tracking-wider transition-colors shrink-0">
+              <i class="fa-solid fa-map-location-dot"></i> View on Map
+            </a>
+          </div>
+        </article>
+
+        <!-- EVENT 5: Mehendi (Emerald & Henna Gold Accent) -->
+        <article class="reveal group bg-gradient-to-br from-royalEmerald via-emerald-950 to-royalEmerald text-ivorySilk rounded-3xl p-7 sm:p-8 border border-brightGold/55 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-28 h-28 bg-brightGold/10 rounded-bl-full pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brightGold/20 text-brightGold text-xs font-semibold tracking-wider uppercase">
+                <i class="fa-regular fa-calendar"></i> 21 January 2027
+              </span>
+              <span class="text-sm font-serif font-bold text-brightGold">
+                <i class="fa-regular fa-clock mr-1"></i> 6:00 PM
+              </span>
+            </div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-11 h-11 rounded-2xl gold-foil-bg text-royalEmerald flex items-center justify-center shrink-0 shadow">
+                <i class="fa-solid fa-leaf text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-serif text-3xl font-bold text-brightGold">Mehendi</h3>
+                <span class="text-[11px] uppercase tracking-widest text-emerald-200/80 font-medium">Royal Emerald &amp; Henna Art</span>
+              </div>
+            </div>
+            <p class="text-sm text-emerald-100/85 leading-relaxed mb-5">
+              Intricate henna motifs, vibrant bangles, acoustic folk songs, and warm festive cheer at our family residence.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-brightGold/25 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="text-xs sm:text-sm text-emerald-50">
+              <span class="font-semibold text-brightGold block">Venue:</span>
+              At our residence (7/A Mohinder Nagar, Canal Road, Jammu)
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=7%2FA+Mohinder+Nagar%2C+Canal+Road%2C+Jammu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-brightGold text-brightGold hover:bg-brightGold hover:text-royalEmerald text-xs font-semibold uppercase tracking-wider transition-colors shrink-0">
+              <i class="fa-solid fa-map-location-dot"></i> View on Map
+            </a>
+          </div>
+        </article>
+
+        <!-- EVENT 6: Saant -->
+        <article class="reveal group bg-ivorySilk rounded-3xl p-7 sm:p-8 border border-antiqueGold/45 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-antiqueGold/10 rounded-bl-full pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-royalMaroon/10 text-royalMaroon text-xs font-semibold tracking-wider uppercase">
+                <i class="fa-regular fa-calendar"></i> 23 January 2027
+              </span>
+              <span class="text-sm font-serif font-bold text-antiqueGold">
+                <i class="fa-regular fa-clock mr-1"></i> 10:00 AM
+              </span>
+            </div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-11 h-11 rounded-2xl bg-royalMaroon text-brightGold flex items-center justify-center shrink-0 shadow">
+                <i class="fa-solid fa-fire text-lg"></i>
+              </div>
+              <h3 class="font-serif text-3xl font-bold text-royalMaroon">Saant</h3>
+            </div>
+            <p class="text-sm text-stone-600 leading-relaxed mb-5">
+              Traditional morning havan and sacred Dogra rituals purifying and blessing the wedding day.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-antiqueGold/25 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="text-xs sm:text-sm text-stone-700">
+              <span class="font-semibold text-royalMaroon block">Venue:</span>
+              At our residence (7/A Mohinder Nagar, Canal Road, Jammu)
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=7%2FA+Mohinder+Nagar%2C+Canal+Road%2C+Jammu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-royalMaroon text-royalMaroon hover:bg-royalMaroon hover:text-brightGold text-xs font-semibold uppercase tracking-wider transition-colors shrink-0">
+              <i class="fa-solid fa-map-location-dot"></i> View on Map
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- EVENT 7: Reception of Barat (Grand Finale Full-Width Card) -->
+      <div class="reveal mt-8 bg-gradient-to-r from-royalMaroon via-deepCrimson to-royalMaroon text-ivorySilk rounded-3xl p-8 sm:p-10 border-2 border-brightGold shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-brightGold/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative z-10">
+          <div class="space-y-4 max-w-3xl">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="px-4 py-1.5 rounded-full bg-brightGold text-deepCrimson font-bold text-xs uppercase tracking-widest shadow">
+                Grand Finale Celebration
+              </span>
+              <span class="text-sm font-serif font-semibold text-brightGold">
+                <i class="fa-regular fa-calendar mr-1"></i> 23 January 2027 &bull; <i class="fa-regular fa-clock mr-1"></i> 8:00 PM Onwards
+              </span>
+            </div>
+            <h3 class="font-serif text-3xl sm:text-4xl font-bold text-brightGold">
+              Reception of Barat
+            </h3>
+            <p class="text-base sm:text-lg text-ivorySilk/90 leading-relaxed">
+              A grand royal reception welcoming the Barat followed by celebratory feasts, music, and joyous blessings for Elika &amp; Shivang.
+            </p>
+            <div class="text-sm text-ivorySilk/95 pt-1">
+              <span class="font-semibold text-brightGold">Venue:</span> KC Emporia, Akhnoor Road, Paloura, Jammu
+            </div>
+          </div>
+          <div class="shrink-0">
+            <a href="https://www.google.com/maps/search/?api=1&query=KC+Emporia+Akhnoor+Road+Paloura+Jammu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full gold-foil-bg text-deepCrimson font-bold text-xs uppercase tracking-widest shadow-lg hover:scale-105 transition-all">
+              <i class="fa-solid fa-map-location-dot"></i> View on Map
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- RSVP SECTION                                                          -->
+    <!-- ===================================================================== -->
+    <section id="rsvp" class="py-16 sm:py-24 px-4 sm:px-6 max-w-3xl mx-auto reveal">
+      <div class="bg-ivorySilk royal-card-border rounded-3xl p-8 sm:p-12 text-center shadow-xl">
+        <span class="text-xs uppercase tracking-[0.3em] text-antiqueGold font-semibold">Join the Celebration</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-royalMaroon mt-2 mb-3">
+          RSVP
+        </h2>
+        <p class="font-serif italic text-base sm:text-lg text-stone-600 mb-8 max-w-lg mx-auto">
+          Your gracious presence is our greatest gift. Please let us know if you will be able to attend.
+        </p>
+
+        <!-- RSVP Form -->
+        <form id="rsvpForm" class="space-y-6 text-left">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="guestName" class="block text-xs font-bold uppercase tracking-wider text-royalMaroon mb-2">Full Name *</label>
+              <input type="text" id="guestName" required placeholder="e.g. Aarav Sharma" class="w-full px-4 py-3 rounded-xl bg-warmParchment/70 border border-antiqueGold/40 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-royalMaroon transition-colors" />
+            </div>
+            <div>
+              <label for="guestPhone" class="block text-xs font-bold uppercase tracking-wider text-royalMaroon mb-2">Phone / WhatsApp Number *</label>
+              <input type="tel" id="guestPhone" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl bg-warmParchment/70 border border-antiqueGold/40 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-royalMaroon transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="attendance" class="block text-xs font-bold uppercase tracking-wider text-royalMaroon mb-2">Will You Attend? *</label>
+              <select id="attendance" class="w-full px-4 py-3 rounded-xl bg-warmParchment/70 border border-antiqueGold/40 text-stone-800 focus:outline-none focus:border-royalMaroon transition-colors">
+                <option value="Joyfully Accepts">Joyfully Accepts</option>
+                <option value="Regretfully Declines">Regretfully Declines</option>
+              </select>
+            </div>
+            <div>
+              <label for="guestCount" class="block text-xs font-bold uppercase tracking-wider text-royalMaroon mb-2">Number of Guests</label>
+              <select id="guestCount" class="w-full px-4 py-3 rounded-xl bg-warmParchment/70 border border-antiqueGold/40 text-stone-800 focus:outline-none focus:border-royalMaroon transition-colors">
+                <option value="1">1 Person</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5+">5+ Family Members</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="eventsSelection">
+            <label class="block text-xs font-bold uppercase tracking-wider text-royalMaroon mb-3">Events Attending</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-serif">
+              <label class="flex items-center gap-2.5 p-3 rounded-xl bg-warmParchment/50 border border-antiqueGold/30 cursor-pointer hover:bg-warmParchment">
+                <input type="checkbox" name="event" value="Khule Shagun (17 Jan)" checked class="accent-royalMaroon w-4 h-4" />
+                <span>Khule Shagun (17 Jan)</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-3 rounded-xl bg-warmParchment/50 border border-antiqueGold/30 cursor-pointer hover:bg-warmParchment">
+                <input type="checkbox" name="event" value="Shiv Vivah (18 Jan)" checked class="accent-royalMaroon w-4 h-4" />
+                <span>Shiv Vivah (18 Jan)</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-3 rounded-xl bg-warmParchment/50 border border-antiqueGold/30 cursor-pointer hover:bg-warmParchment">
+                <input type="checkbox" name="event" value="Haldi (19 Jan)" checked class="accent-royalMaroon w-4 h-4" />
+                <span>Haldi (19 Jan)</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-3 rounded-xl bg-warmParchment/50 border border-antiqueGold/30 cursor-pointer hover:bg-warmParchment">
+                <input type="checkbox" name="event" value="Cocktail (20 Jan)" checked class="accent-royalMaroon w-4 h-4" />
+                <span>Cocktail (20 Jan)</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-3 rounded-xl bg-warmParchment/50 border border-antiqueGold/30 cursor-pointer hover:bg-warmParchment">
+                <input type="checkbox" name="event" value="Mehendi (21 Jan)" checked class="accent-royalMaroon w-4 h-4" />
+                <span>Mehendi (21 Jan)</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-3 rounded-xl bg-warmParchment/50 border border-antiqueGold/30 cursor-pointer hover:bg-warmParchment">
+                <input type="checkbox" name="event" value="Saant & Reception (23 Jan)" checked class="accent-royalMaroon w-4 h-4" />
+                <span>Saant &amp; Reception (23 Jan)</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label for="blessings" class="block text-xs font-bold uppercase tracking-wider text-royalMaroon mb-2">Blessings &amp; Wishes for the Couple</label>
+            <textarea id="blessings" rows="3" placeholder="Write a warm note for Elika & Shivang..." class="w-full px-4 py-3 rounded-xl bg-warmParchment/70 border border-antiqueGold/40 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-royalMaroon transition-colors"></textarea>
+          </div>
+
+          <div class="text-center pt-2">
+            <button type="submit" class="px-10 py-4 rounded-full gold-foil-bg text-deepCrimson font-bold text-xs uppercase tracking-[0.25em] shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer">
+              Send RSVP &amp; Blessings to WhatsApp
+            </button>
+          </div>
+        </form>
+
+        <!-- RSVP Success State -->
+        <div id="rsvpSuccessMessage" class="hidden py-8 space-y-5 text-center">
+          <div class="w-16 h-16 rounded-full bg-royalMaroon text-brightGold flex items-center justify-center mx-auto text-3xl shadow-md">
+            ✓
+          </div>
+          <h3 class="font-serif text-3xl font-bold text-royalMaroon">Thank You!</h3>
+          <p id="rsvpSummaryText" class="font-serif text-lg text-stone-700 max-w-md mx-auto leading-relaxed"></p>
+          <div class="flex flex-wrap justify-center gap-3 pt-2">
+            <button id="downloadIcsBtn" type="button" class="px-6 py-2.5 rounded-full border border-royalMaroon text-royalMaroon hover:bg-royalMaroon hover:text-brightGold text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer">
+              + Add to Calendar (.ics)
+            </button>
+            <button id="resetRsvpBtn" type="button" class="px-6 py-2.5 rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer">
+              Send Another Response
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- FOOTER                                                                -->
+    <!-- ===================================================================== -->
+    <footer class="text-center pb-16 pt-4 space-y-3">
+      <p class="font-script text-4xl text-royalMaroon">Elika &amp; Shivang</p>
+      <p class="font-serif italic text-stone-600 text-base">We eagerly await celebrating our special day with you.</p>
+      <p class="text-xs uppercase tracking-[0.25em] text-antiqueGold font-semibold">
+        Verma &amp; Sharma Families &bull; Jammu
+      </p>
+    </footer>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT LOGIC                                                      -->
+  <!-- ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- CUSTOM MP3 AUDIO & ENTRANCE PLAYER ---
+      const bgMusic = document.getElementById('bgMusic');
+      const entranceOverlay = document.getElementById('entranceOverlay');
+      const openInviteBtn = document.getElementById('openInviteBtn');
+      const audioToggleBtn = document.getElementById('audioToggleBtn');
+      const audioStatusLabel = document.getElementById('audioStatusLabel');
+
+      bgMusic.volume = 0.6; // Set volume (0.0 to 1.0)
+      let isPlaying = false;
+      let wasPlayingBeforeHide = false;
+
+      function updateAudioUI(playing) {
+        if (playing) {
+          audioToggleBtn.classList.add('playing');
+          audioStatusLabel.textContent = 'Music: On';
+        } else {
+          audioToggleBtn.classList.remove('playing');
+          audioStatusLabel.textContent = 'Music: Off';
+        }
+      }
+
+      function startAudio() {
+        bgMusic.play().then(() => {
+          isPlaying = true;
+          updateAudioUI(true);
+        }).catch((err) => {
+          console.warn("Audio autoplay waiting for user interaction:", err);
+          isPlaying = false;
+          updateAudioUI(false);
+        });
+      }
+
+      function stopAudio() {
+        bgMusic.pause();
+        isPlaying = false;
+        updateAudioUI(false);
+      }
+
+      audioToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (isPlaying) {
+          stopAudio();
+        } else {
+          startAudio();
+        }
+      });
+
+      openInviteBtn.addEventListener('click', () => {
+        startAudio();
+        entranceOverlay.style.opacity = '0';
+        entranceOverlay.style.pointerEvents = 'none';
+        setTimeout(() => {
+          entranceOverlay.style.display = 'none';
+        }, 1000);
+      });
+
+      // Page Visibility API: Auto-pause when switching tabs or locking phone
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          if (isPlaying) {
+            wasPlayingBeforeHide = true;
+            stopAudio();
+          }
+        } else {
+          if (wasPlayingBeforeHide) {
+            wasPlayingBeforeHide = false;
+            startAudio();
+          }
+        }
+      });
+
+      // --- LIVE COUNTDOWN TIMER TO 23 JAN 2027 ---
+      const weddingDate = new Date('January 23, 2027 20:00:00').getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance < 0) {
+          document.getElementById('cd-days').textContent = '00';
+          document.getElementById('cd-hours').textContent = '00';
+          document.getElementById('cd-mins').textContent = '00';
+          document.getElementById('cd-secs').textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(seconds).padStart(2, '0');
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // --- SCROLL REVEAL OBSERVER ---
+      const observerOptions = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // --- RSVP FORM & WHATSAPP INTEGRATION ---
+      const rsvpForm = document.getElementById('rsvpForm');
+      const rsvpSuccessMessage = document.getElementById('rsvpSuccessMessage');
+      const rsvpSummaryText = document.getElementById('rsvpSummaryText');
+      const attendanceSelect = document.getElementById('attendance');
+      const eventCheckboxesContainer = document.getElementById('eventsSelection');
+
+      if (attendanceSelect) {
+        attendanceSelect.addEventListener('change', () => {
+          if (attendanceSelect.value === 'Regretfully Declines') {
+            if (eventCheckboxesContainer) eventCheckboxesContainer.classList.add('opacity-40', 'pointer-events-none');
+          } else {
+            if (eventCheckboxesContainer) eventCheckboxesContainer.classList.remove('opacity-40', 'pointer-events-none');
+          }
+        });
+      }
+
+      if (rsvpForm) {
+        rsvpForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          // REPLACE WITH YOUR ACTUAL WHATSAPP NUMBER (Country code 91, no '+' or spaces)
+          const myWhatsAppNumber = "+12048690510"; 
+
+          const guestName = document.getElementById('guestName').value.trim();
+          const guestPhone = document.getElementById('guestPhone').value.trim();
+          const status = attendanceSelect.value;
+          const guestCount = document.getElementById('guestCount').value;
+          const blessings = document.getElementById('blessings').value.trim() || "No message";
+          
+          const selectedEvents = Array.from(document.querySelectorAll('input[name="event"]:checked'))
+              .map(cb => cb.value);
+          const eventsList = selectedEvents.length > 0 ? selectedEvents.join(', ') : 'None selected';
+
+          // Format WhatsApp Message
+          let whatsappMessage = `💍 *Wedding RSVP - Elika & Shivang* 💍\n\n`;
+          whatsappMessage += `👤 *Name:* ${guestName}\n`;
+          whatsappMessage += `📱 *Phone:* ${guestPhone}\n`;
+          whatsappMessage += `✅ *Status:* ${status}\n`;
+
+          if (status === 'Joyfully Accepts') {
+              whatsappMessage += `👥 *Guests:* ${guestCount}\n`;
+              whatsappMessage += `🎉 *Events:* ${eventsList}\n`;
+              rsvpSummaryText.innerHTML = `Dearest <strong class="text-royalMaroon">${guestName}</strong>, your RSVP has been recorded for <strong class="text-royalMaroon">${guestCount}</strong> guest(s)! Opening WhatsApp to send your response...`;
+          } else {
+              rsvpSummaryText.innerHTML = `Dearest <strong class="text-royalMaroon">${guestName}</strong>, thank you for letting us know. Opening WhatsApp...`;
+          }
+
+          whatsappMessage += `💌 *Blessings:* ${blessings}`;
+
+          // Toggle UI Success State & Confetti
+          rsvpForm.classList.add('hidden');
+          rsvpSuccessMessage.classList.remove('hidden');
+          triggerConfetti();
+
+          // Open WhatsApp with pre-filled message
+          const whatsappUrl = `https://wa.me/${myWhatsAppNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+          setTimeout(() => {
+              window.open(whatsappUrl, '_blank');
+          }, 600);
+        });
+      }
+
+      const resetRsvpBtn = document.getElementById('resetRsvpBtn');
+      if (resetRsvpBtn) {
+        resetRsvpBtn.addEventListener('click', () => {
+          rsvpSuccessMessage.classList.add('hidden');
+          rsvpForm.classList.remove('hidden');
+          rsvpForm.reset();
+        });
+      }
+
+      // --- .ICS CALENDAR DOWNLOAD ---
+      const downloadIcsBtn = document.getElementById('downloadIcsBtn');
+      if (downloadIcsBtn) {
+        downloadIcsBtn.addEventListener('click', () => {
+          const icsData = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'BEGIN:VEVENT',
+            'DTSTART:20270123T143000Z',
+            'DTEND:20270123T183000Z',
+            'SUMMARY:Elika & Shivang Wedding - Reception of Barat',
+            'DESCRIPTION:Wedding celebrations of Elika Verma & Shivang Sharma in Jammu.',
+            'LOCATION:KC Emporia, Akhnoor Road, Paloura, Jammu',
+            'END:VEVENT',
+            'END:VCALENDAR'
+          ].join('\r\n');
+
+          const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = 'Elika-Shivang-Wedding.ics';
+          link.click();
+        });
+      }
+
+      // --- FALLING GOLDEN PETALS & CONFETTI CANVASES ---
+      const petalsCanvas = document.getElementById('petalsCanvas');
+      const ctxPetals = petalsCanvas.getContext('2d');
+      let petals = [];
+
+      function resizePetalsCanvas() {
+        petalsCanvas.width = window.innerWidth;
+        petalsCanvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizePetalsCanvas);
+      resizePetalsCanvas();
+
+      class Petal {
+        constructor(isBurst = false) {
+          this.reset(isBurst);
+        }
+        reset(isBurst = false) {
+          this.x = isBurst ? petalsCanvas.width / 2 : Math.random() * petalsCanvas.width;
+          this.y = isBurst ? petalsCanvas.height / 2 : Math.random() * -petalsCanvas.height;
+          this.size = Math.random() * 4 + 2;
+          this.speedY = isBurst ? (Math.random() - 0.5) * 12 : Math.random() * 1.2 + 0.5;
+          this.speedX = isBurst ? (Math.random() - 0.5) * 12 : (Math.random() - 0.5) * 0.8;
+          this.opacity = Math.random() * 0.6 + 0.3;
+          this.angle = Math.random() * Math.PI * 2;
+          this.spin = (Math.random() - 0.5) * 0.04;
+          this.isBurst = isBurst;
+        }
+        update() {
+          this.y += this.speedY;
+          this.x += this.speedX + Math.sin(this.angle) * 0.3;
+          this.angle += this.spin;
+          if (this.isBurst) {
+            this.opacity -= 0.015;
+          } else if (this.y > petalsCanvas.height + 10) {
+            this.reset(false);
+          }
+        }
+        draw() {
+          if (this.opacity <= 0) return;
+          ctxPetals.save();
+          ctxPetals.translate(this.x, this.y);
+          ctxPetals.rotate(this.angle);
+          ctxPetals.fillStyle = `rgba(197, 155, 39, ${this.opacity})`;
+          ctxPetals.beginPath();
+          ctxPetals.ellipse(0, 0, this.size, this.size * 0.55, 0, 0, Math.PI * 2);
+          ctxPetals.fill();
+          ctxPetals.restore();
+        }
+      }
+
+      for (let i = 0; i < 40; i++) {
+        petals.push(new Petal(false));
+      }
+
+      function triggerConfetti() {
+        for (let i = 0; i < 60; i++) {
+          petals.push(new Petal(true));
+        }
+      }
+
+      function animatePetals() {
+        ctxPetals.clearRect(0, 0, petalsCanvas.width, petalsCanvas.height);
+        petals = petals.filter(p => !p.isBurst || p.opacity > 0);
+        petals.forEach(p => {
+          p.update();
+          p.draw();
+        });
+        requestAnimationFrame(animatePetals);
+      }
+      animatePetals();
+    });
+  </script>
+</body>
+</html>
